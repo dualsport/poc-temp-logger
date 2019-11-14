@@ -22,19 +22,6 @@ def index():
 def logtemps():
     form = TempForm()
     if form.validate_on_submit():
-        return (
-            f"""
-            <div>
-                Cambria Temperature Monitoring: 
-                <a href="/index">Home</a> 
-                <a href="/logtemps">Log Temps</a>
-            </div>
-                <h1>You Entered</h1>
-            <p>Name: {form.username.data}</p>
-            <p>Machine: {form.machine.data}</p>
-            <p>Main Temp: {form.maintemp.data}</p>
-            <p>Aux Temp: {form.auxtemp.data}</p>
-            <button onclick="window.location.href = '/logtemps';">Continue</button>
-            """
-        )
+        # Do stuff
+        return render_template('ack.html', title='Temp Logs', form=form)
     return render_template('temps.html', title='Temp Logs', form=form)

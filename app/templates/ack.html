@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Entered Data</h1>
+<p>Name: {{form.username.data}}</p>
+<p>Machine: {{form.machine.data}}</p>
+<p>Main Temp: {{form.maintemp.data}}</p>
+<p>Aux Temp: {{form.auxtemp.data}}</p>
+
+<button onclick="window.location.href = '/logtemps';">Continue</button>
+
+{% endblock %}
