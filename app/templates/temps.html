@@ -5,18 +5,34 @@
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
-            {{ form.username.label }} {{ form.username(size=32) }}
-        </p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
         <p>
-            {{ form.machine.label }} {{ form.machine(size=32) }}
-        </p>
+            {{ form.machine.label }}<br>
+            {{ form.machine(size=32) }}<br>
+            {% for error in form.machine.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
         <p>
-            {{ form.maintemp.label }} {{ form.maintemp(size=10) }}
-        </p>
+            {{ form.maintemp.label }}<br>
+            {{ form.maintemp(size=10) }}<br>
+            {% for error in form.maintemp.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
         <p>
-            {{ form.auxtemp.label }} {{ form.auxtemp(size=10) }}
-        </p>
+            {{ form.auxtemp.label }}<br>
+            {{ form.auxtemp(size=10) }}<br>
+            {% for error in form.auxtemp.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
         <p>{{ form.submit() }}</p>
     </form>
-{% endblock %}
+    {% endblock %}
 
